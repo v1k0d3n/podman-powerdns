@@ -24,8 +24,9 @@ sudo podman pod create -p 3306:3306 -p 5300:5300 -p 5300:5300/udp -p 53:53 -p 53
 ``` 
 _Note: I will be improving this soon..._
 
-3. Now create the `pdns-mysql` container within the `pdns` Podman pod:
+3. Now, change the permission of `/opt/pdns/mysql` to user `27:27` and create the `pdns-mysql` container within the `pdns` Podman pod:
 ```
+sudo chown -Rv 27:27 /opt/pdns/mysql
 sudo podman run -d --pod pdns --name pdns-mysql -v /opt/pdns/mysql:/var/lib/mysql/data:Z quay.io/bjozsa-redhat/pdns-mysql-80:latest
 ```
 
