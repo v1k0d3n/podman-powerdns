@@ -12,8 +12,8 @@ CREATE TABLE domains (
 ) Engine=InnoDB CHARACTER SET 'latin1';
 
 CREATE UNIQUE INDEX name_index ON domains(name);
-CREATE INDEX catalog_idx ON domains(catalog);
 
+CREATE INDEX catalog_idx ON domains(catalog);
 
 CREATE TABLE records (
   id                    BIGINT AUTO_INCREMENT,
@@ -30,9 +30,10 @@ CREATE TABLE records (
 ) Engine=InnoDB CHARACTER SET 'latin1';
 
 CREATE INDEX nametype_index ON records(name,type);
-CREATE INDEX domain_id ON records(domain_id);
-CREATE INDEX ordername ON records (ordername);
 
+CREATE INDEX domain_id ON records(domain_id);
+
+CREATE INDEX ordername ON records (ordername);
 
 CREATE TABLE supermasters (
   ip                    VARCHAR(64) NOT NULL,
@@ -40,7 +41,6 @@ CREATE TABLE supermasters (
   account               VARCHAR(40) CHARACTER SET 'utf8' NOT NULL,
   PRIMARY KEY (ip, nameserver)
 ) Engine=InnoDB CHARACTER SET 'latin1';
-
 
 CREATE TABLE comments (
   id                    INT AUTO_INCREMENT,
@@ -54,8 +54,8 @@ CREATE TABLE comments (
 ) Engine=InnoDB CHARACTER SET 'latin1';
 
 CREATE INDEX comments_name_type_idx ON comments (name, type);
-CREATE INDEX comments_order_idx ON comments (domain_id, modified_at);
 
+CREATE INDEX comments_order_idx ON comments (domain_id, modified_at);
 
 CREATE TABLE domainmetadata (
   id                    INT AUTO_INCREMENT,
@@ -66,7 +66,6 @@ CREATE TABLE domainmetadata (
 ) Engine=InnoDB CHARACTER SET 'latin1';
 
 CREATE INDEX domainmetadata_idx ON domainmetadata (domain_id, kind);
-
 
 CREATE TABLE cryptokeys (
   id                    INT AUTO_INCREMENT,
@@ -80,7 +79,6 @@ CREATE TABLE cryptokeys (
 
 CREATE INDEX domainidindex ON cryptokeys(domain_id);
 
-
 CREATE TABLE tsigkeys (
   id                    INT AUTO_INCREMENT,
   name                  VARCHAR(255),
@@ -90,7 +88,11 @@ CREATE TABLE tsigkeys (
 ) Engine=InnoDB CHARACTER SET 'latin1';
 
 CREATE UNIQUE INDEX namealgoindex ON tsigkeys(name, algorithm);
+
 ALTER TABLE records ADD CONSTRAINT `records_domain_id_ibfk` FOREIGN KEY (`domain_id`) REFERENCES `domains` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 ALTER TABLE comments ADD CONSTRAINT `comments_domain_id_ibfk` FOREIGN KEY (`domain_id`) REFERENCES `domains` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 ALTER TABLE domainmetadata ADD CONSTRAINT `domainmetadata_domain_id_ibfk` FOREIGN KEY (`domain_id`) REFERENCES `domains` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 ALTER TABLE cryptokeys ADD CONSTRAINT `cryptokeys_domain_id_ibfk` FOREIGN KEY (`domain_id`) REFERENCES `domains` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
