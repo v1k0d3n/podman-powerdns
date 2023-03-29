@@ -1,7 +1,5 @@
 # Introduction
-PowerDNS is an incredible project, and although it's easy to install and configure, I wanted to lower the bar for others to try it out for themselves. So, I created this nascent project   
-
-PowerDNS is an incredible project, and although it's typically easy to install and configure, I want to lower the bar even further for others to try it out for themselves. So I will start maintaining this nascent project called `podman-powerdns`.
+PowerDNS is an incredible project, and although it's already fairly easy to install and configure, I wanted to lower the bar for others even more so they can try it out for themselves and use it within their own labs. So I created and will continue to maintain this nascent project called `podman-powerdns`. In the future it will include deployments for Podman, Compose, and OpenShift.
 
 # Details
 Each of the containers will leverage small and well-maintained images. They will either be based on UBI images, or as with the case of PowerDNS-Admin, they will be maintained by upstream maintainers.
