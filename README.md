@@ -62,7 +62,7 @@ sudo podman run -d \
   -e SECRET_KEY='supersecretapikey' \
   --name=pdns-admin \
   -v pda-data:/opt/powerdns-admin/data \
-  --network=host ngoduykhanh/powerdns-admin:latest
+  --network=host docker.io/ngoduykhanh/powerdns-admin:latest
 ```
 
 I will provide more later. I would recommend waiting until I get some rootless containers going, but for now this should just work (at least that's the hope anyway).
