@@ -65,4 +65,7 @@ sudo podman run -d \
   --network=host docker.io/ngoduykhanh/powerdns-admin:latest
 ```
 
+10. Now you can log into the PowerDNS-Admin website using port standard port 80 (http).
+_NOTE: This will obviously be configurable soon_
+
 I will provide more later. I would recommend waiting until I get some rootless containers going, but for now this should just work (at least that's the hope anyway).
