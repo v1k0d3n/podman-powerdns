@@ -4,6 +4,21 @@ PowerDNS is an incredible project, and although it's already fairly easy to inst
 # Details
 Each of the containers will leverage small and well-maintained images. They will either be based on UBI images, or as with the case of PowerDNS-Admin, they will be maintained by upstream maintainers.
 
+# TODO
+These are things planned for the project, once I get some more free time (starting the weekend of 04/01/23).
+* Improve security
+  - Rootless containers
+  - SELinux options
+  - Containers running with correct user permissions for PDNS and PowerDNS-Admin
+* More controls
+* Persistent data
+  - Add persistent data options for PowerDNS-Admin (investigate if this is really needed)
+* Bug Fixes
+  - Determine why API key isn't carrying over to PowerDNS-Admin container (may require upstream work)
+  - Determine why Host key isn't carrying over to PowerDNS-Admin container (may require upstream work)
+
+Any suggestions or improvements will happily considered/added! Please feel free to reach out with a PR or issue.
+
 # Introduction
 To get started, use the following instructions. This project is just starting off, so I will make improvements soon. I'm having a really busy week, and I just wanted to throw this up as quickly as possible. All priveledges and SELinux requirements will be improved very soon. This is just a starting place for now.
 
