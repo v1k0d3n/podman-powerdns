@@ -7,9 +7,9 @@ Each of the containers shall leverage small and well-maintained images.
  - pdns-recursor: Images should be built from fairly stable upstream Fedora sources, due to any potention issues with EPEL (otherwise I would be using UBI images)
  - pdns-mysql-80: Images will be built from UBI sources, so that I can take advantage of CVE fixes as well as environment variable (and ease of use on OpenShift, if ever required)
 
-[![Image: MySQL-80 for PowerDNS](https://quay.io/repository/bjozsa-redhat/pdns-mysql-80/status "Docker Repository on Quay")](https://quay.io/repository/bjozsa-redhat/pdns-mysql-80) <br>
-[![Image: PowerDNS Server](https://quay.io/repository/bjozsa-redhat/pdns-server/status "Docker Repository on Quay")](https://quay.io/repository/bjozsa-redhat/pdns-server) <br>
-[![Image: PowerDNS Recursor](https://quay.io/repository/bjozsa-redhat/pdns-recursor/status "Docker Repository on Quay")](https://quay.io/repository/bjozsa-redhat/pdns-recursor) <br>
+[![Image: MySQL-80 for PowerDNS](https://quay.io/repository/bjozsa-redhat/pdns-mysql-80/status "Image: MySQL-80 for PowerDNS")](https://quay.io/repository/bjozsa-redhat/pdns-mysql-80) <br>
+[![Image: PowerDNS Server](https://quay.io/repository/bjozsa-redhat/pdns-server/status "Image: PowerDNS Server")](https://quay.io/repository/bjozsa-redhat/pdns-server) <br>
+[![Image: PowerDNS Recursor](https://quay.io/repository/bjozsa-redhat/pdns-recursor/status "Image: PowerDNS Recursor")](https://quay.io/repository/bjozsa-redhat/pdns-recursor) <br>
 
 # TODO
 These are things planned for the project, once I get some more free time (starting the weekend of 04/01/23).
