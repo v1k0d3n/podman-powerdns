@@ -8,7 +8,7 @@ Each of the containers shall leverage small and well-maintained images.
  - pdns-mysql-80: Images will be built from UBI sources, so that I can take advantage of CVE fixes as well as environment variable (and ease of use on OpenShift, if ever required)
 
 [![Docker Repository on Quay](https://quay.io/repository/bjozsa-redhat/pdns-mysql-80/status "Docker Repository on Quay")](https://quay.io/repository/bjozsa-redhat/pdns-mysql-80)
-[![Docker Repository on Quay](https://quay.io/repository/bjozsa-redhat/server/status "Docker Repository on Quay")](https://quay.io/repository/bjozsa-redhat/pdns-server)
+[![Docker Repository on Quay](https://quay.io/repository/bjozsa-redhat/pdns-server/status "Docker Repository on Quay")](https://quay.io/repository/bjozsa-redhat/pdns-server)
 [![Docker Repository on Quay](https://quay.io/repository/bjozsa-redhat/pdns-recursor/status "Docker Repository on Quay")](https://quay.io/repository/bjozsa-redhat/pdns-recursor)
 
 # TODO
