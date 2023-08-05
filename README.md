@@ -1,8 +1,15 @@
 # Introduction
 PowerDNS is an incredible project, and although it's already fairly easy to install and configure, I wanted to lower the bar for others even more so they can try it out for themselves and use it within their own labs. So I created and will continue to maintain this nascent project called `podman-powerdns`. In the future it will include deployments for Podman, Compose, and OpenShift.
 
-# Details
-Each of the containers will leverage small and well-maintained images. They will either be based on UBI images, or as with the case of PowerDNS-Admin, they will be maintained by upstream maintainers.
+# Goals: Images
+Each of the containers shall leverage small and well-maintained images. 
+ - pdns-server: Images should be built from fairly stable upstream Fedora sources, due to any potention issues with EPEL (otherwise I would be using UBI images)
+ - pdns-recursor: Images should be built from fairly stable upstream Fedora sources, due to any potention issues with EPEL (otherwise I would be using UBI images)
+ - pdns-mysql-80: Images will be built from UBI sources, so that I can take advantage of CVE fixes as well as environment variable (and ease of use on OpenShift, if ever required)
+
+[![Docker Repository on Quay](https://quay.io/repository/bjozsa-redhat/pdns-mysql-80/status "Docker Repository on Quay")](https://quay.io/repository/bjozsa-redhat/pdns-mysql-80)
+[![Docker Repository on Quay](https://quay.io/repository/bjozsa-redhat/server/status "Docker Repository on Quay")](https://quay.io/repository/bjozsa-redhat/pdns-server)
+[![Docker Repository on Quay](https://quay.io/repository/bjozsa-redhat/pdns-recursor/status "Docker Repository on Quay")](https://quay.io/repository/bjozsa-redhat/pdns-recursor)
 
 # TODO
 These are things planned for the project, once I get some more free time (starting the weekend of 04/01/23).

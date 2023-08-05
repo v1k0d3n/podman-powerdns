@@ -1,4 +1,4 @@
-FROM        registry.redhat.io/rhel8/mysql-80:1-243.1679484509
+FROM        registry.redhat.io/rhel8/mysql-80:1-263.1689584950
 LABEL       description="MySQL Image for PDNS"
 MAINTAINER  Brandon B. Jozsa<bjozsa@redhat.com>
 ENV         MYSQL_PORT=3306 \

@@ -1,12 +1,12 @@
-FROM        registry.redhat.io/ubi8:8.7-1090.1679482075
+FROM        quay.io/fedora/fedora:38
 LABEL       description="PowerDNS Image"
 MAINTAINER  Brandon B. Jozsa<bjozsa@redhat.com>
-RUN         yum -yy install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
-            yum -yy install \
+RUN         yum -yy install \
                 pdns \
                 pdns-backend-mysql \
                 bind-utils && \
             yum clean all
+RUN         mkdir -p /run/pdns-recursor
+COPY        ./pdns.conf /etc/pdns/pdns.conf
 EXPOSE      53 53/udp
 ENTRYPOINT  ["/usr/sbin/pdns_server"]
-# CMD       ["--config"]
